@@ -10,6 +10,9 @@ const Cricket = () => {
     // const [over, setOver] = useState(0)
     const [teamNameA, setTeamNameA] = useState('India')
     const [teamNameB, setTeamNameB] = useState('Australia')
+    const handleClearLocalStorage = () => {
+        localStorage.clear()
+    }
 
     function calculation_over(balls) {
         let overs = Math.floor(balls / 6)
@@ -237,8 +240,8 @@ const Cricket = () => {
                             [0, 1, 2, 3, 4, 5, 6].map((e, i) => {
                                 return (<button type='button' className='btn btn-danger btn-lg rounded-circle ms-4' key={i} onClick={() => handleRuns(e)} >{e}</button>)
                             })
-                        }
-
+                        } <br /> <br />
+                    <button type="button" className='btn btn-primary' onClick={()=> localStorage.clear()}>Clear Local Storage</button>
                     </div>
                 </div>
             </div>
